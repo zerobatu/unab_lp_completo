@@ -1,0 +1,46 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2>Se encontraron <%= @person.errors.count %> <%=@person.errors.count > 1 ? 'errores' : 'error' %> en el formulario:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Nombre' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Apellido paterno' %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Apellido Materno' %><br>
+    <%= f.text_field :mother_name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Edad' %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label 'Fecha de nacimiento' %><br>
+    <%= f.date_select :birthday, start_year: 1930, end_year: Date.today.year %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label 'Telefono' %><br>
+    <%= f.text_field :phone, placeholder: '+56912345678' %>
+  </div>
+  <div class="actions">
+    <br />
+    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+<% end %>

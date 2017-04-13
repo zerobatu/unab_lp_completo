@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Apellido Paterno:</strong>
+  <%= @person.last_name %>
+</p>
+
+<p>
+  <strong>Apellido Materno:</strong>
+  <%= @person.mother_name %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @person.age %>
+</p>
+
+<p>
+  <strong>Fecha de nacimiento:</strong>
+  <%= @person.birthday %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @person.email %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @person.phone %>
+</p>
+
+<br />
+<%= link_to 'Editar', edit_person_path(@person) %> |
+<%= link_to 'Volver', people_path %>
